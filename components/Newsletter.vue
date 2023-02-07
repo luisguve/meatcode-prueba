@@ -56,6 +56,14 @@
           </div>
         </form>
       </div>
+      <div class='col-lg-8 mx-auto mt-3'>
+        <div v-if='state.success' class="alert alert-success" role='alert'>
+          {{state.success}}
+        </div>
+        <div v-if='state.error' class="alert alert-danger" role='alert'>
+          {{state.error}}
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -64,31 +72,54 @@
 
 const API_URL = 'https://5eed24da4cbc340016330f0d.mockapi.io/api/newsletter'
 
+const defaultState = {
+  loading: false,
+  error: '',
+  success: ''
+}
+const defaultInputs = {
+  email: '',
+  firstName: '',
+  lastName: '',
+  phoneNumber: ''
+}
+
 export default {
   name: 'Newsletter',
   data: () => ({
-    inputs: {
-      email: "",
-      firstName: "",
-      lastName: "",
-      phoneNumber: ""
-    },
-    state: {
-      loading: false,
-    }
+    inputs: defaultInputs,
+    state: defaultState
   }),
   methods: {
+    resetState: function() {
+      this.state = defaultState
+    },
+    resetInputs: function() {
+      this.inputs = defaultInputs
+    },
     handleSubmit: async function() {
-      this.state.loading = true;
-      const ctx = this;
+      this.resetState()
+
+      this.state.loading = true
+
+      const ctx = this
+
       await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(this.inputs),
         headers: {"Content-type": "application/json; charset=UTF-8"}
       })
-      .then(response => response.json()) 
-      .then(json => console.log(json))
-      .catch(err => console.log(err))
+      .then(async response => {
+        if (!response.ok) {
+          throw await response.json()
+          return
+        }
+        ctx.state.success = 'Formulario enviado correctamente'
+      })
+      .catch(err => {
+        console.log(err)
+        ctx.state.error = 'No se pudo enviar el formulario'
+      })
       .finally(() => ctx.state.loading = false)
     }
   },
@@ -117,6 +148,9 @@ export default {
   button.submit:hover {
     background-color: #009CD9;
     border-color: #009CD9;
+  }
+  button.submit:focus {
+    box-shadow: none;
   }
   button[disabled] {
     background: #CFCFCF;
