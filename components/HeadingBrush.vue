@@ -1,19 +1,27 @@
 <template>
   <header :class='className'>
-    <h2 class='text-center'>{{ content }}</h2>
+    <component :is='headingSize' class='text-center'>{{ content }}</component>
   </header>
 </template>
 
 <script>
+const validHeadings = ['h1','h2','h3','h4','h5','h6'];
+
 export default {
   name: 'HeadingBrush',
-  props: ['content', 'marginBottom'],
+  props: ['content', 'marginBottom', 'headingType'],
   computed: {
     className() {
       if (!this.marginBottom) {
         return '';
       }
       return `mb-${this.marginBottom}`
+    },
+    headingSize() {
+      if (!validHeadings.includes(this.headingType)) {
+        return 'h1';
+      }
+      return this.headingType;
     }
   }
 }

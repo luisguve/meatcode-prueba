@@ -1,6 +1,9 @@
 <template>
   <section class='container mt-5'>
-    <HeadingBrush content='Nuestros articulos' />
+    <HeadingBrush
+      content='Nuestros articulos'
+      headingType="h2"
+    />
     <p v-if="$fetchState.pending">Cargando articulos...</p>
     <p v-else-if="$fetchState.error">Error cargando articulos: {{JSON.stringify($fetchState.error)}}</p>
     <div v-else class="row mt-5">

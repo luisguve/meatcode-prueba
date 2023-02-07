@@ -2,7 +2,11 @@
   <section class='container my-5'>
     <div class='row mb-5'>
       <div class='col-lg-8 mx-auto'>
-        <HeadingBrush marginBottom='4' content='Contactanos' />
+        <HeadingBrush
+          marginBottom='4'
+          content='Contactanos'
+          headingType="h2"
+        />
         <form class="row" @submit.prevent="handleSubmit">
           <div class="form-group col-lg-6">
             <label for="firstname">Nombre</label>
