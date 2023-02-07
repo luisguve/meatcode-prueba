@@ -101,6 +101,9 @@ export default {
   button.active {
     color: #D8AD3D;
   }
+  button:focus {
+    box-shadow: none;
+  }
   .card:hover a {
     color: #D8AD3D;
   }
