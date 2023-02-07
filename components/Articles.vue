@@ -1,8 +1,6 @@
 <template>
   <section class='container mt-5'>
-    <header>
-      <h2 class='text-center'>Nuestros articulos</h2>
-    </header>
+    <HeadingBrush content='Nuestros articulos' />
     <p v-if="$fetchState.pending">Cargando articulos...</p>
     <p v-else-if="$fetchState.error">Error cargando articulos: {{JSON.stringify($fetchState.error)}}</p>
     <div v-else class="row mt-5">
@@ -98,26 +96,5 @@ export default {
 <style scoped>
   button.active {
     color: #D8AD3D;
-  }
-  header {
-    position: relative;
-  }
-  header h2 {
-    position: relative;
-    z-index: 2;
-   }
-  header::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(/brush.webp);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: contain;
-    opacity: 0.3;
   }
 </style>
