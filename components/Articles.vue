@@ -37,6 +37,7 @@
             <div class="card-body">
               <a :href="article.url"><h5 class="card-title">{{article.title}}</h5></a>
               <p class="card-text">{{article.content}}</p>
+              <a :href="article.url">Leer mas</a>
             </div>
           </div>
         </article>
@@ -98,6 +99,9 @@ export default {
 
 <style scoped>
   button.active {
+    color: #D8AD3D;
+  }
+  .card:hover a {
     color: #D8AD3D;
   }
 </style>
