@@ -3,7 +3,7 @@
     <!-- NAVBAR -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand font-primary" href="#">Logo</a>
         <div class="collapse navbar-collapse mt-2" id="navbar-top">
           <ul class="navbar-nav ml-auto">
             <li v-for="social of socials" class="nav-item mr-2">
@@ -20,7 +20,7 @@
       </nav>
       <!-- CONTENT HERO SECTION -->
       <section class="hero d-flex align-items-center">
-        <h1>El secreto <br /> de tu cocina</h1>
+        <h1 class="font-primary">El secreto <br /> de tu cocina</h1>
       </section>
     </div>
   </header>
@@ -61,6 +61,13 @@ export default {
   .hero {
     min-height: 70vh;
   }
+  .hero h1 {
+    font-size: 125px;
+    line-height: 0.85;
+  }
+  .navbar-brand {
+    font-size: 55px;
+  }
   .wrapper {
     background: url(/hero.webp);
     background-repeat: no-repeat;
@@ -85,5 +92,13 @@ export default {
   }
   .wrapper h1 {
     z-index: 100;
+  }
+  @media screen and (max-width: 768px) {
+    .hero h1 {
+      font-size: 75px;
+    }
+    .navbar-brand {
+      font-size: 35px;
+    }
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <header :class='className'>
-    <component :is='headingSize' class='text-center'>{{ content }}</component>
+    <component :is='headingSize' class='text-center font-primary'>{{ content }}</component>
   </header>
 </template>
 
@@ -28,13 +28,31 @@ export default {
 </script>
 
 <style scoped>
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 34px;
+  }
+  h4 {
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 26px;
+  }
+  h6 {
+    font-size: 22px;
+  }
   header {
     position: relative;
   }
   header h2 {
     position: relative;
     z-index: 2;
-   }
+  }
   header::before {
     content: "";
     position: absolute;
