@@ -10,19 +10,46 @@
         <form class="row" @submit.prevent="handleSubmit">
           <div class="form-group col-lg-6">
             <label for="firstname">Nombre</label>
-            <input type="text" class="form-control" id="firstname" name="firstname" v-model="inputs.firstName">
+            <input
+              type="text"
+              class="form-control"
+              id="firstname"
+              name="firstname"
+              v-model="inputs.firstName"
+              required
+            >
           </div>
           <div class="form-group col-lg-6">
             <label for="lastname">Apellido</label>
-            <input type="text" class="form-control" id="lastname" name="lastname" v-model="inputs.lastName">
+            <input
+              type="text"
+              class="form-control"
+              id="lastname"
+              name="lastname"
+              v-model="inputs.lastName"
+              required
+            >
           </div>
           <div class="form-group col-lg-6">
             <label for="input_email">Email</label>
-            <input type="email" class="form-control" id="input_email" name="email" v-model="inputs.email">
+            <input
+              type="email"
+              class="form-control"
+              id="input_email"
+              name="email"
+              v-model="inputs.email"
+              required
+            >
           </div>
           <div class="form-group col-lg-6">
             <label for="phone">Telefono</label>
-            <input type="text" class="form-control" id="phone" v-model="inputs.phoneNumber">
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              v-model="inputs.phoneNumber"
+              required
+            >
           </div>
           <div class="col-lg-3 ml-auto d-flex flex-column">
             <button :disabled="disableSubmit" type="submit" class="btn btn-primary submit">Enviar</button>
@@ -77,6 +104,10 @@ export default {
 </script>
 
 <style scoped>
+  input:focus {
+    box-shadow: 0 0 0 0.05rem #D8AD3D;
+    border-color: #D8AD3D;
+  }
   button.submit {
     background-color: #D8AD3D;
     border-color: #D8AD3D;
