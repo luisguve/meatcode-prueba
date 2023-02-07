@@ -7,16 +7,17 @@
         <div class="collapse navbar-collapse mt-2" id="navbar-top">
           <ul class="navbar-nav ml-auto">
             <li v-for="social of socials" class="nav-item mr-2">
-              <SocialLink
-                :icon="social.icon"
-                :url="social.url"
-                :color="social.color"
-              />
+              <a class="nav-link" :href="social.url">
+                <SocialLink
+                  :icon="social.icon"
+                  :color="social.color"
+                  :ariaLabel="social.ariaLabel"
+                />
+              </a>
             </li>
           </ul>
         </div>
       </nav>
-
       <!-- CONTENT HERO SECTION -->
       <section class="hero d-flex align-items-center">
         <h1>El secreto <br /> de tu cocina</h1>
@@ -35,17 +36,20 @@ export default {
         {
           icon: 'icons/facebook-f.svg',
           url: '#',
-          color: '#009CD9'
+          color: '#009CD9',
+          ariaLabel: 'Facebook page'
         },
         {
           icon: 'icons/instagram.svg',
           url: '#',
-          color: '#B72C2C'
+          color: '#B72C2C',
+          ariaLabel: 'Instagram page'
         },
         {
           icon: 'icons/youtube.svg',
           url: '#',
-          color: '#D8AD3D'
+          color: '#D8AD3D',
+          ariaLabel: 'YouTube channel'
         }
       ]
     }

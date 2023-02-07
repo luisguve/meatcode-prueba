@@ -1,14 +1,12 @@
 <template>
-  <a class="nav-link" :href="url">
-    <inline-svg 
-      :src="icon"
-      width="50" 
-      height="50"
-      :fill="color"
-      aria-label="My image"
-      :style="customStyle"
+  <inline-svg 
+    :src="icon"
+    width="50"
+    height="50"
+    :fill="color"
+    :aria-label="ariaLabel"
+    :style="customStyle"
   ></inline-svg>
-  </a>
 </template>
 
 <script>
@@ -16,7 +14,7 @@ import InlineSvg from 'vue-inline-svg';
 
 export default {
   name: 'SocialLink',
-  props: ["icon", "color", "url"],
+  props: ["icon", "color", "ariaLabel"],
   components: {
     InlineSvg
   },
