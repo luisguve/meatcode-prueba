@@ -30,7 +30,8 @@ export default {
 svg {
   display: inline-block;
   vertical-align: baseline;
-  margin-bottom: -2px; /* yes, I'm that particular about formatting */
+  margin-bottom: -2px;
+  background: #f4eff3;
 }
 .nav-link svg {
   border: 2px solid;
