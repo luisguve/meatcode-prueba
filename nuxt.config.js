@@ -40,7 +40,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'bootstrap-vue/nuxt'
   ],
+  bootstrapVue: {
+    // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
+    icons: true
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -50,5 +55,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend: (config) => {
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
+
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          'vue-loader',
+          'vue-svg-loader',
+        ],
+      });
+    },
   }
 }
