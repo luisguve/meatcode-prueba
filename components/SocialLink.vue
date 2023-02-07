@@ -32,10 +32,16 @@ svg {
   vertical-align: baseline;
   margin-bottom: -2px;
   background: #f4eff3;
-}
-.nav-link svg {
   border: 2px solid;
   border-radius: 50%;
   padding: 13px;
+}
+
+@media screen and (max-width: 576px) {
+  svg {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
 }
 </style>

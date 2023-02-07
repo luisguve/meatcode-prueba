@@ -2,7 +2,7 @@
   <header class="container-fluid px-0 wrapper">
     <!-- NAVBAR -->
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <nav class="navbar navbar-expand navbar-light bg-transparent">
         <a class="navbar-brand font-primary" href="#">Logo</a>
         <div class="collapse navbar-collapse mt-2" id="navbar-top">
           <ul class="navbar-nav ml-auto">
@@ -99,6 +99,18 @@ export default {
     }
     .navbar-brand {
       font-size: 35px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .wrapper::before {
+      top: -25%;
+      left: 0;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .wrapper {
+      background-position-x: left;
     }
   }
 </style>

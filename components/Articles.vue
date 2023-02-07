@@ -30,9 +30,9 @@
           </div>
         </div>
       </aside>
-      <section class="col-lg-9 row">
-        <article v-for="article of filteredArticles" class="col-lg-4 px-0 d-flex">
-          <div class="card mx-3 mt-4">
+      <section class="col-lg-9 mx-auto row">
+        <article v-for="article of filteredArticles" class="col-md-6 col-lg-4 px-0 d-flex">
+          <div class="card mx-md-1 mx-lg-3 mt-4">
             <img class="card-img-top" :src="article.image" alt="Card image cap">
             <div class="card-body">
               <a :href="article.url"><h5 class="card-title">{{article.title}}</h5></a>
