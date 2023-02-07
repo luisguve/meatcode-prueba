@@ -6,25 +6,11 @@
         <a class="navbar-brand" href="#">Logo</a>
         <div class="collapse navbar-collapse mt-2" id="navbar-top">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item mr-2">
+            <li v-for="social of socials" class="nav-item mr-2">
               <SocialLink
-                :icon="socials.facebook.icon"
-                :url="socials.facebook.url"
-                color="#009CD9"
-              />
-            </li>
-            <li class="nav-item mr-2">
-              <SocialLink
-                :icon="socials.instagram.icon"
-                :url="socials.instagram.url"
-                color="#B72C2C"
-              />
-            </li>
-            <li class="nav-item">
-              <SocialLink
-                :icon="socials.youtube.icon"
-                :url="socials.youtube.url"
-                color="#D8AD3D"
+                :icon="social.icon"
+                :url="social.url"
+                :color="social.color"
               />
             </li>
           </ul>
@@ -45,20 +31,23 @@ export default {
   name: 'Banner',
   data: function(){
     return {
-      socials: {
-        facebook: {
+      socials: [
+        {
           icon: 'icons/facebook-f.svg',
-          url: '#'
+          url: '#',
+          color: '#009CD9'
         },
-        instagram: {
+        {
           icon: 'icons/instagram.svg',
-          url: '#'
+          url: '#',
+          color: '#B72C2C'
         },
-        youtube: {
+        {
           icon: 'icons/youtube.svg',
-          url: '#'
+          url: '#',
+          color: '#D8AD3D'
         }
-      }
+      ]
     }
   }
 }
